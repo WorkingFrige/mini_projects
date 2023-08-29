@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <title>Карточки | Проект 1</title>
-
-  <script src="app.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -56,4 +54,19 @@
 
 </div>
 </body>
+<script>
+  const slides = document.querySelectorAll('.catalog .slide')
+
+  for (const slide of slides) {
+      slide.addEventListener('click', () => {
+          clearActiveClasses()
+  
+          slide.classList.add('active')
+      })
+  }
+  
+  function clearActiveClasses() {
+      slides.forEach((slide) => slide.classList.remove('active'))
+  }
+</script>  
 </html>
